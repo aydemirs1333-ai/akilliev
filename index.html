@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartHome Ultimate v10</title>
+    <style>
+        :root { 
+            --bg: #0f172a; --card: #1e293b; --text: #f1f5f9; 
+            --blue: #38bdf8; --red: #ef4444; --green: #22c55e; 
+            --orange: #f59e0b; --gray: #64748b;
+        }
+
+        body { 
+            background: var(--bg); color: var(--text); 
+            font-family: 'Segoe UI', sans-serif; margin: 0; 
+            min-height: 100vh; display: flex; flex-direction: column; 
+            justify-content: center; align-items: center; padding: 15px;
+        }
+
+        h2 { color: var(--blue); margin: 0 0 15px 0; font-size: 1.5rem; text-align: center; }
+
+        .status-bar { 
+            width: 100%; max-width: 420px; padding: 10px; border-radius: 12px; 
+            text-align: center; font-weight: bold; margin-bottom: 15px; 
+            border: 1px solid var(--red); color: var(--red); background: rgba(239, 68, 68, 0.1); 
+            font-size: 0.85rem;
+        }
+
+        .grid { 
+            display: grid; grid-template-columns: 1fr 1fr; gap: 10px; 
+            width: 100%; max-width: 420px; 
+        }
+
+        .card { 
+            background: var(--card); padding: 15px; border-radius: 20px; 
+            border-top: 4px solid var(--blue); text-align: center; 
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        .full { grid-column: span 2; }
+        .label { font-size: 0.65rem; color: #94a3b8; text-transform: uppercase; margin-bottom: 5px; display: block; font-weight: bold; }
+        .val { font-size: 1.6rem; font-weight: bold; margin: 5px 0; color: var(--blue); }
+        .stat { font-weight: bold; font-size: 0.85rem; }
+        
+        /* Renk Durumları */
+        .on { color: var(--green); } 
+        .off { color: var(--gray); } 
+        .alert { color: var(--red); }
+    </style>
+</head>
+<body>
+
+    <h2>AKILLI EV KONTROL</h2>
+    <div class="status-bar">○ BAĞLANTI KESİLDİ (Sistem Bekleniyor)</div>
+
+    <div class="grid">
+        
+        <div class="card full" style="border-top-color: var(--orange);">
+            <span class="label">🌫️ GAZ SIZINTI DÜZEYİ</span>
+            <div class="val">-- <small style="font-size:0.7rem">PPM</small></div>
+            <span class="stat">TAHLİYE FANI: <span class="off">KAPALI</span></span>
+        </div>
+
+        <div class="card full" style="border-top-color: var(--red);">
+            <span class="label">🔥 YANGIN GÜVENLİK (ALEV)</span>
+            <div class="stat alert" style="font-size: 1.2rem; margin-top: 5px;">DURUM: BEKLENİYOR</div>
+            <small style="color: var(--gray)">Kızılötesi Takip</small>
+        </div>
+
+        <div class="card full" style="border-top-color: var(--green);">
+            <span class="label">🚰 SU DEPOSU DOLULUK</span>
+            <div class="val">% --</div>
+            <span class="stat">POMPA: <span class="off">DURDU</span></span>
+        </div>
+
+        <div class="card">
+            <span class="label">🌡️ SICAKLIK</span>
+            <div class="val">--°C</div>
+        </div>
+        <div class="card">
+            <span class="label">💧 NEM</span>
+            <div class="val">% --</div>
+        </div>
+
+        <div class="card">
+            <span class="label">☀️ GÜN IŞIĞI</span>
+            <div class="val" style="color:var(--orange)">% --</div>
+        </div>
+
+        <div class="card">
+            <span class="label">💡 ŞERİT LED</span>
+            <div class="stat off" style="margin-top:10px;">KAPALI</div>
+        </div>
+
+        <div class="card full">
+            <span class="label">🔵 SİSTEM VE UYARI LED (PARALEL)</span>
+            <div class="stat on" style="font-size:1rem; margin-top:5px;">SİSTEM ÇALIŞIYOR</div>
+        </div>
+
+    </div>
+
+</body>
+</html>
