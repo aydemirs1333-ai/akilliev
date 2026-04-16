@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartHome Ultimate v10</title>
+    <title>SmartHome Ultimate v11</title>
     <style>
         :root { 
             --bg: #0f172a; --card: #1e293b; --text: #f1f5f9; 
             --blue: #38bdf8; --red: #ef4444; --green: #22c55e; 
-            --orange: #f59e0b; --gray: #64748b;
+            --orange: #f59e0b; --gray: #64748b; --yellow: #eab308;
         }
 
         body { 
@@ -43,7 +43,6 @@
         .val { font-size: 1.6rem; font-weight: bold; margin: 5px 0; color: var(--blue); }
         .stat { font-weight: bold; font-size: 0.85rem; }
         
-        /* Renk Durumları */
         .on { color: var(--green); } 
         .off { color: var(--gray); } 
         .alert { color: var(--red); }
@@ -62,10 +61,15 @@
             <span class="stat">TAHLİYE FANI: <span class="off">KAPALI</span></span>
         </div>
 
+        <div class="card full" style="border-top-color: var(--yellow);">
+            <span class="label">🎤 ORTAM SES SEVİYESİ</span>
+            <div class="val">-- <small style="font-size:0.7rem">dB</small></div>
+            <span class="stat">GÜRÜLTÜ DURUMU: <span class="off">SESSİZ</span></span>
+        </div>
+
         <div class="card full" style="border-top-color: var(--red);">
             <span class="label">🔥 YANGIN GÜVENLİK (ALEV)</span>
             <div class="stat alert" style="font-size: 1.2rem; margin-top: 5px;">DURUM: BEKLENİYOR</div>
-            <small style="color: var(--gray)">Kızılötesi Takip</small>
         </div>
 
         <div class="card full" style="border-top-color: var(--green);">
